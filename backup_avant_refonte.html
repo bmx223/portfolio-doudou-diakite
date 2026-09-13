@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Doudou Diakite — Mannequin International | Bamako — Paris</title>
+<meta name="description" content="Doudou Diakite — Mannequin international 1,95m basé à Bamako. Haute Couture, Streetwear, Sportswear. Disponible à l'international."/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,ital,wght@9..144,0,300;9..144,0,400;9..144,0,500;9..144,0,600;9..144,0,700;9..144,1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config={
+  theme:{
+    extend:{
+      colors:{
+        bg:'#14100C',
+        bgalt:'#1A140F',
+        ink:'#EDE6D6',
+        inkdim:'#A79C8A',
+        gold:'#C6A15B',
+        hair:'rgba(237,230,214,0.12)',
+        hair2:'rgba(237,230,214,0.08)'
+      },
+      fontFamily:{
+        display:['Fraunces','serif'],
+        sans:['Inter','sans-serif']
+      }
+    }
+  }
+}
+</script>
+<style>
+*{scroll-behavior:smooth}
+body{background:#14100C;color:#EDE6D6;font-family:'Inter',sans-serif;-webkit-font-smoothing:antialiased}
+.font-display{font-family:'Fraunces',serif}
+.ph{background:linear-gradient(135deg,#1e1810 0%,#2a2018 50%,#1a140f 100%);position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;color:rgba(237,230,214,0.28);font-size:10px;letter-spacing:.18em;text-transform:uppercase}
+.ph::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(45deg,transparent,transparent 14px,rgba(198,161,91,0.04) 14px,rgba(198,161,91,0.04) 15px)}
+.ph::after{content:attr(data-label);position:relative;z-index:1;border:1px solid rgba(198,161,91,0.22);padding:6px 12px;background:rgba(20,16,12,0.6);backdrop-filter:blur(6px)}
+.ph-video .play-btn{width:56px;height:56px;border-radius:50%;background:rgba(237,230,214,0.92);display:flex;align-items:center;justify-content:center;transition:transform .35s cubic-bezier(.16,1,.3,1),background .25s;z-index:2;position:relative}
+.ph-video:hover .play-btn{transform:scale(1.06);background:#fff}
+.vlabel{position:absolute;left:14px;bottom:14px;z-index:2;font-size:10px;letter-spacing:.14em;color:rgba(237,230,214,0.88);background:rgba(20,16,12,0.72);border:1px solid rgba(237,230,214,0.14);padding:5px 9px;backdrop-filter:blur(8px)}
+.rise{opacity:0;transform:translateY(18px);animation:rise .85s cubic-bezier(.16,1,.3,1) forwards}
+.rise-1{animation-delay:.05s}.rise-2{animation-delay:.22s}.rise-3{animation-delay:.38s}.rise-4{animation-delay:.55s}
+@keyframes rise{to{opacity:1;transform:translateY(0)}}
+@media(prefers-reduced-motion:reduce){.rise{animation:none;opacity:1;transform:none}.ph-video .play-btn{transition:none}}
+.hairline{border-color:rgba(237,230,214,0.12)}
+.gallery-item{transition:transform .5s cubic-bezier(.16,1,.3,1),opacity .3s}
+.gallery-item:hover{transform:translateY(-4px)}
+.filter-btn{border:1px solid rgba(237,230,214,0.14);color:#A79C8A;font-size:10px;letter-spacing:.14em;padding:8px 14px;transition:all .25s}
+.filter-btn:hover{border-color:rgba(198,161,91,0.4);color:#EDE6D6}
+.filter-btn.active{background:#C6A15B;color:#14100C;border-color:#C6A15B}
+a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{outline:2px solid #C6A15B;outline-offset:3px}
+input,textarea{background:transparent;border:0;border-bottom:1px solid rgba(237,230,214,0.14);color:#EDE6D6;padding:10px 0 10px;transition:border-color .2s}
+input::placeholder,textarea::placeholder{color:#6b6152}
+input:focus,textarea:focus{outline:none;border-bottom-color:#C6A15B}
+#mobileMenu{max-height:0;opacity:0;overflow:hidden;transition:max-height .35s cubic-bezier(.16,1,.3,1),opacity .3s}
+#mobileMenu.open{max-height:420px;opacity:1}
+</style>
+</head>
+<body class="bg-bg text-ink">
+
+<!-- EDIT: Identité — Initiales / logo du mannequin -->
+<!-- ============================================================ -->
+<!-- HEADER -->
+<header class="fixed top-0 inset-x-0 z-50 bg-bg/80 backdrop-blur-md border-b border-hair">
+  <div class="max-w-6xl mx-auto px-5 lg:px-8 h-16 flex items-center justify-between gap-4">
+    <a href="#top" class="font-display text-[18px] tracking-[.14em] text-ink font-medium">D.&nbsp;D.</a>
+
+    <nav class="hidden lg:flex items-center gap-7 text-[11px] tracking-[.16em] text-inkdim">
+      <a href="#compcard" class="hover:text-gold transition-colors" data-fr="FICHE TECHNIQUE" data-en="COMP CARD">FICHE TECHNIQUE</a>
+      <a href="#polas" class="hover:text-gold transition-colors">POLAS</a>
+      <a href="#lookbook" class="hover:text-gold transition-colors">LOOKBOOK</a>
+      <a href="#showreel" class="hover:text-gold transition-colors">SHOWREEL</a>
+      <a href="#contact" class="hover:text-gold transition-colors">CONTACT</a>
+    </nav>
+
+    <div class="flex items-center gap-2">
+      <div class="hidden sm:flex items-center rounded-full border border-hair p-0.5">
+        <button id="btnFR" class="px-3 py-1 rounded-full text-[11px] tracking-widest bg-gold text-bg font-semibold">FR</button>
+        <button id="btnEN" class="px-3 py-1 rounded-full text-[11px] tracking-widest text-inkdim hover:text-ink">EN</button>
+      </div>
+      <!-- EDIT: WhatsApp — remplacer le numéro (format international sans + ni espaces, ex 223XXXXXXXX) -->
+      <a href="https://wa.me/22300000000?text=Bonjour%20—%20demande%20de%20booking%20pour%20Doudou%20Diakite" target="_blank" rel="noopener" class="hidden sm:inline-flex items-center gap-2 bg-gold text-bg text-[11px] tracking-[.14em] font-semibold px-4 py-2 rounded-full hover:bg-ink transition-colors">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M19.05 4.91A9.82 9.82 0 0 0 12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.26-1.38a9.78 9.78 0 0 0 4.78 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.91-7.02zm-7.01 15.24h-.01a8.16 8.16 0 0 1-4.16-1.14l-.3-.18-3.12.82.83-3.04-.2-.31a8.26 8.26 0 0 1-1.27-4.39c0-4.55 3.71-8.26 8.27-8.26 2.21 0 4.29.86 5.85 2.43a8.22 8.22 0 0 1 2.42 5.84c0 4.56-3.71 8.27-8.27 8.27zm6.74-6.19c-.37-.19-2.19-1.08-2.53-1.21-.34-.12-.59-.18-.84.18-.25.37-.96 1.21-1.18 1.45-.22.25-.44.28-.81.09-.37-.19-1.57-.58-2.99-1.84-1.11-.99-1.86-2.21-2.08-2.58-.22-.37-.02-.57.17-.76.17-.17.37-.44.56-.66.19-.22.25-.37.37-.62.12-.25.06-.46-.03-.64-.09-.19-.84-2.02-1.15-2.77-.3-.72-.61-.62-.84-.63l-.72-.01c-.25 0-.64.09-.98.46-.34.37-1.28 1.25-1.28 3.05s1.31 3.54 1.49 3.78c.19.25 2.58 3.94 6.24 5.52.87.38 1.55.6 2.08.77.87.28 1.67.24 2.3.15.7-.1 2.19-.89 2.5-1.76.31-.86.31-1.6.22-1.76-.09-.15-.34-.25-.71-.44z"/></svg>
+        WHATSAPP
+      </a>
+      <button id="burger" class="lg:hidden w-9 h-9 grid place-items-center border border-hair rounded-full text-ink" aria-label="Menu">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </div>
+  <div id="mobileMenu" class="lg:hidden border-t border-hair bg-bgalt">
+    <nav class="px-5 py-4 flex flex-col gap-1 text-[11px] tracking-[.16em] text-inkdim">
+      <a href="#compcard" class="py-2.5 hover:text-ink" data-fr="FICHE TECHNIQUE" data-en="COMP CARD">FICHE TECHNIQUE</a>
+      <a href="#polas" class="py-2.5 hover:text-ink">POLAS</a>
+      <a href="#lookbook" class="py-2.5 hover:text-ink">LOOKBOOK</a>
+      <a href="#showreel" class="py-2.5 hover:text-ink">SHOWREEL</a>
+      <a href="#contact" class="py-2.5 hover:text-ink">CONTACT</a>
+      <div class="flex gap-2 pt-3">
+        <button id="btnFRm" class="flex-1 py-2 rounded-full text-[11px] tracking-widest bg-gold text-bg font-semibold">FR</button>
+        <button id="btnENm" class="flex-1 py-2 rounded-full text-[11px] tracking-widest border border-hair text-inkdim">EN</button>
+      </div>
+    </nav>
+  </div>
+</header>
+<div class="h-16"></div>
+
+<!-- ============================================================ -->
+<!-- HERO -->
+<section id="top" class="max-w-6xl mx-auto px-5 lg:px-8 pt-8 lg:pt-12">
+  <div class="grid lg:grid-cols-[1fr_84px] gap-6 lg:gap-8">
+    <!-- Photo + overlay -->
+    <div class="relative">
+      <div class="relative rise rise-1 w-full overflow-hidden" style="aspect-ratio:4/5;min-height:520px">
+        <img src="images/hero.jpg" class="absolute inset-0 w-full h-full object-cover" alt="Doudou Diakite — Mannequin" loading="eager" fetchpriority="high">
+      </div>
+
+      <!-- Badge dispo -->
+      <div class="rise rise-2 absolute top-4 right-4 lg:top-6 lg:right-6 flex items-center gap-2 bg-bg/75 backdrop-blur-md border border-gold/40 rounded-full px-3.5 py-2">
+        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+        <a href="#contact" class="text-[10px] tracking-[.16em] text-gold font-medium" data-fr="DISPONIBLE POUR BOOKINGS" data-en="AVAILABLE FOR BOOKINGS">DISPONIBLE POUR BOOKINGS</a>
+      </div>
+
+      <!-- Nom overlaid -->
+      <div class="rise rise-3 absolute left-5 bottom-5 lg:left-8 lg:bottom-8">
+        <p class="text-[11px] tracking-[.22em] text-gold mb-1" data-fr="MANNEQUIN — BAMAKO, MALI" data-en="MODEL — BAMAKO, MALI">MANNEQUIN — BAMAKO, MALI</p>
+        <!-- EDIT: Nom du mannequin -->
+        <h1 class="font-display font-light leading-[.88] tracking-[-.03em] text-ink" style="font-size:clamp(38px,7vw,64px)">
+          Doudou<br/>Diakite
+        </h1>
+      </div>
+    </div>
+
+    <!-- Ruler desktop only -->
+    <div class="hidden lg:flex flex-col items-center gap-3 pt-2">
+      <p class="text-[10px] tracking-[.18em] text-inkdim [writing-mode:vertical-rl]">1,95M</p>
+      <svg width="30" height="360" viewBox="0 0 30 360" class="text-hair">
+        <line x1="15" y1="8" x2="15" y2="352" stroke="currentColor" stroke-width="1"/>
+        <!-- ticks -->
+        <g stroke="currentColor" stroke-width="1">
+          <line x1="10" y1="18" x2="20" y2="18"/><line x1="11" y1="36" x2="19" y2="36"/><line x1="11" y1="54" x2="19" y2="54"/><line x1="10" y1="72" x2="20" y2="72"/>
+          <line x1="11" y1="90" x2="19" y2="90"/><line x1="11" y1="108" x2="19" y2="108"/><line x1="10" y1="126" x2="20" y2="126"/><line x1="11" y1="144" x2="19" y2="144"/>
+          <line x1="11" y1="162" x2="19" y2="162"/><line x1="10" y1="180" x2="20" y2="180"/><line x1="11" y1="198" x2="19" y2="198"/><line x1="11" y1="216" x2="19" y2="216"/>
+          <line x1="10" y1="234" x2="20" y2="234"/><line x1="11" y1="252" x2="19" y2="252"/><line x1="11" y1="270" x2="19" y2="270"/><line x1="10" y1="288" x2="20" y2="288"/>
+          <line x1="11" y1="306" x2="19" y2="306"/><line x1="11" y1="324" x2="19" y2="324"/>
+        </g>
+        <!-- marker gold -->
+        <g>
+          <line x1="4" y1="26" x2="26" y2="26" stroke="#C6A15B" stroke-width="1.6"/>
+          <circle cx="15" cy="26" r="3.5" fill="#C6A15B"/>
+        </g>
+        <text x="15" y="354" text-anchor="middle" font-size="7" letter-spacing="1.2" fill="#A79C8A">200 CM</text>
+      </svg>
+      <div class="text-center leading-none">
+        <p class="font-display text-[13px] tracking-[.12em] text-gold">195 CM</p>
+        <p class="text-[10px] tracking-[.14em] text-inkdim">6'5"</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bio strip -->
+  <div class="rise rise-4 mt-6 lg:mt-8 border-t border-hair pt-6 grid lg:grid-cols-[160px_1fr] gap-4 lg:gap-10">
+    <p class="text-[11px] tracking-[.18em] text-gold" data-fr="À PROPOS" data-en="ABOUT">À PROPOS</p>
+    <p class="text-[15px] leading-relaxed text-inkdim max-w-2xl" data-fr="Formé à la gymnastique et au basketball, Doudou apporte à chaque prise de vue une maîtrise du geste et une présence rare. 1,95 m d'allure, un regard précis, une démarche qui traverse aussi bien un défilé Haute Couture qu'un shooting streetwear." data-en="Trained in gymnastics and basketball, Doudou brings control, movement and presence to every shoot. Standing 6'5&quot;, with a precise gaze and a walk that carries as much on a Haute Couture runway as on a streetwear set.">Formé à la gymnastique et au basketball, Doudou apporte à chaque prise de vue une maîtrise du geste et une présence rare. 1,95&nbsp;m d'allure, un regard précis, une démarche qui traverse aussi bien un défilé Haute Couture qu'un shooting streetwear.</p>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- COMP CARD -->
+<section id="compcard" class="mt-12 lg:mt-16 bg-bgalt border-y border-hair">
+  <div class="max-w-6xl mx-auto px-5 lg:px-8 py-10 lg:py-14">
+    <div class="flex flex-wrap items-baseline justify-between gap-3 mb-8">
+      <h2 class="font-display text-[28px] lg:text-[42px] font-light tracking-tight leading-none" data-fr="Fiche technique" data-en="Comp card">Fiche technique</h2>
+      <span class="text-[11px] tracking-[.18em] text-gold" data-fr="MISE À JOUR 2026" data-en="UPDATED 2026">MISE À JOUR 2026</span>
+    </div>
+
+    <div class="grid lg:grid-cols-[420px_1fr] gap-8 lg:gap-12">
+      <div class="relative overflow-hidden" style="aspect-ratio:3/4">
+        <img src="images/profil.jpg" class="absolute inset-0 w-full h-full object-cover" alt="Doudou Diakite portrait" loading="lazy">
+      </div>
+
+      <dl class="divide-y divide-hair">
+        <div class="flex justify-between gap-4 py-4">
+          <dt class="text-[11px] tracking-[.14em] text-inkdim uppercase" data-fr="Taille" data-en="Height">Taille</dt>
+          <dd class="font-display text-[18px] text-ink">1,95 m <span class="text-[13px] text-inkdim">/ 6'5"</span></dd>
+        </div>
+        <div class="flex justify-between gap-4 py-4">
+          <dt class="text-[11px] tracking-[.14em] text-inkdim uppercase" data-fr="Tour de poitrine" data-en="Chest">Tour de poitrine</dt>
+          <dd class="font-display text-[18px] text-ink">98 cm <span class="text-[13px] text-inkdim">/ 39"</span></dd>
+        </div>
+        <div class="flex justify-between gap-4 py-4">
+          <dt class="text-[11px] tracking-[.14em] text-inkdim uppercase" data-fr="Tour de taille" data-en="Waist">Tour de taille</dt>
+          <dd class="font-display text-[18px] text-ink">80 cm <span class="text-[13px] text-inkdim">/ 31"</span></dd>
+        </div>
+        <div class="flex justify-between gap-4 py-4">
+          <dt class="text-[11px] tracking-[.14em] text-inkdim uppercase" data-fr="Tour de hanches" data-en="Hips">Tour de hanches</dt>
+          <dd class="font-display text-[18px] text-ink">96 cm <span class="text-[13px] text-inkdim">/ 38"</span></dd>
+        </div>
+        <div class="flex justify-between gap-4 py-4">
+          <dt class="text-[11px] tracking-[.14em] text-inkdim uppercase" data-fr="Pointure" data-en="Shoe size">Pointure</dt>
+          <dd class="font-display text-[18px] text-ink">45 EU <span class="text-[13px] text-inkdim">/ 11 US</span></dd>
+        </div>
+        <div class="flex justify-between gap-4 py-4">
+          <dt class="text-[11px] tracking-[.14em] text-inkdim uppercase" data-fr="Yeux" data-en="Eyes">Yeux</dt>
+          <dd class="font-display text-[18px] text-ink" data-fr="Marron foncé" data-en="Dark brown">Marron foncé</dd>
+        </div>
+        <div class="flex justify-between gap-4 py-4">
+          <dt class="text-[11px] tracking-[.14em] text-inkdim uppercase" data-fr="Cheveux" data-en="Hair">Cheveux</dt>
+          <dd class="font-display text-[18px] text-ink" data-fr="Noir, court" data-en="Black, short">Noir, court</dd>
+        </div>
+        <div class="flex justify-between gap-4 py-4">
+          <dt class="text-[11px] tracking-[.14em] text-inkdim uppercase" data-fr="Disciplines sportives" data-en="Athletic background">Disciplines sportives</dt>
+          <dd class="font-display text-[16px] text-ink">Gymnastique · Basketball</dd>
+        </div>
+        <div class="flex justify-between gap-4 py-4">
+          <dt class="text-[11px] tracking-[.14em] text-inkdim uppercase" data-fr="Univers" data-en="Categories">Univers</dt>
+          <dd class="font-display text-[15px] text-ink leading-tight text-right">Haute Couture · Streetwear ·<br/>Sportswear</dd>
+        </div>
+        <div class="flex justify-between gap-4 py-4">
+          <dt class="text-[11px] tracking-[.14em] text-inkdim uppercase" data-fr="Basé à" data-en="Based in">Basé à</dt>
+          <dd class="font-display text-[15px] text-ink text-right" data-fr="Bamako, Mali — disponible à l'international" data-en="Bamako, Mali — available worldwide">Bamako, Mali — disponible à l'international</dd>
+        </div>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- POLAS -->
+<section id="polas" class="max-w-6xl mx-auto px-5 lg:px-8 py-10 lg:py-14">
+  <div class="mb-8">
+    <p class="text-[11px] tracking-[.18em] text-gold mb-2">SCOUTING</p>
+    <h2 class="font-display text-[26px] lg:text-[40px] font-light leading-none tracking-tight">Polas <span class="text-inkdim font-light">— clichés naturels</span></h2>
+    <p class="mt-3 text-[13px] leading-relaxed text-inkdim max-w-lg" data-fr="Lumière naturelle, sans retouche, sans pose. Trois angles pour évaluer la silhouette." data-en="Natural light, unretouched, unposed. Three angles to assess the silhouette.">Lumière naturelle, sans retouche, sans pose. Trois angles pour évaluer la silhouette.</p>
+  </div>
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-5">
+    <!-- EDIT: Polas — remplacer chaque .ph par <img src="images/face.jpg" ...> etc. -->
+    <div class="ph" style="aspect-ratio:3/4" data-label="FACE / FRONT"></div>
+    <div class="ph" style="aspect-ratio:3/4" data-label="PROFIL / PROFILE"></div>
+    <div class="sm:col-span-2 lg:col-span-1 overflow-hidden relative" style="aspect-ratio:3/4">
+      <img src="images/plein_pied.jpg" class="absolute inset-0 w-full h-full object-cover" alt="Doudou Diakite — Plein pied" loading="lazy" style="object-position:center top"/>
+    </div>
+  </div>
+  <p class="mt-4 text-[11px] tracking-wide text-inkdim/70">Polas : fond uni clair, lumière du jour, sans maquillage ni retouche.</p>
+</section>
+
+<!-- ============================================================ -->
+<!-- LOOKBOOK -->
+<section id="lookbook" class="bg-bgalt border-y border-hair">
+  <div class="max-w-6xl mx-auto px-5 lg:px-8 py-10 lg:py-14">
+    <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-5 mb-8">
+      <h2 class="font-display text-[26px] lg:text-[40px] font-light leading-none tracking-tight">Lookbook</h2>
+      <div class="flex flex-wrap gap-2">
+        <button class="filter-btn active" data-filter="all">TOUT</button>
+        <button class="filter-btn" data-filter="athletic" data-fr="ATHLETIC / MOUVEMENT" data-en="ATHLETIC / MOVEMENT">ATHLETIC / MOUVEMENT</button>
+        <button class="filter-btn" data-filter="streetwear">STREETWEAR</button>
+        <button class="filter-btn" data-filter="couture" data-fr="HAUTE COUTURE" data-en="HAUTE COUTURE">HAUTE COUTURE</button>
+      </div>
+    </div>
+
+    <div id="gallery" class="grid grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-5">
+      <!-- EDIT: Lookbook — dupliquer/ajouter des items. Remplacer .ph par <img src="images/look-01.jpg" ...> -->
+      <button class="gallery-item text-left" data-cat="athletic" data-caption="Athletic / Mouvement — 01"><div class="ph" style="aspect-ratio:4/5" data-label="ATHLETIC — 01"></div></button>
+      <button class="gallery-item text-left" data-cat="streetwear" data-caption="Streetwear — 01"><div class="ph" style="aspect-ratio:4/5" data-label="STREETWEAR — 01"></div></button>
+      <button class="gallery-item text-left" data-cat="couture" data-caption="Haute Couture — 01"><div class="ph" style="aspect-ratio:4/5" data-label="COUTURE — 01"></div></button>
+      <button class="gallery-item text-left" data-cat="athletic" data-caption="Athletic / Mouvement — 02"><div class="ph" style="aspect-ratio:4/5" data-label="ATHLETIC — 02"></div></button>
+      <button class="gallery-item text-left" data-cat="streetwear" data-caption="Streetwear — 02"><div class="ph" style="aspect-ratio:4/5" data-label="STREETWEAR — 02"></div></button>
+      <button class="gallery-item text-left" data-cat="couture" data-caption="Haute Couture — 02"><div class="ph" style="aspect-ratio:4/5" data-label="COUTURE — 02"></div></button>
+      <button class="gallery-item text-left" data-cat="athletic" data-caption="Athletic / Mouvement — 03"><div class="ph" style="aspect-ratio:4/5" data-label="ATHLETIC — 03"></div></button>
+      <button class="gallery-item text-left" data-cat="streetwear" data-caption="Streetwear — 03"><div class="ph" style="aspect-ratio:4/5" data-label="STREETWEAR — 03"></div></button>
+      <button class="gallery-item text-left" data-cat="couture" data-caption="Haute Couture — 03"><div class="ph" style="aspect-ratio:4/5" data-label="COUTURE — 03"></div></button>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- SHOWREEL -->
+<section id="showreel" class="max-w-6xl mx-auto px-5 lg:px-8 py-10 lg:py-14">
+  <div class="mb-8">
+    <p class="text-[11px] tracking-[.18em] text-gold mb-2" data-fr="MOUVEMENT" data-en="MOTION">MOUVEMENT</p>
+    <h2 class="font-display text-[26px] lg:text-[40px] font-light leading-none tracking-tight">Showreel</h2>
+  </div>
+
+  <div class="grid lg:grid-cols-2 gap-4 lg:gap-5">
+    <!-- EDIT: Vidéos — remplacer .ph.ph-video par <video controls src="videos/walk.mp4"> ou <iframe YouTube> -->
+    <div class="ph ph-video relative" style="aspect-ratio:16/9" data-label="">
+      <div class="play-btn">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="#14100C"><path d="M8 5.14v14l11-7z"/></svg>
+      </div>
+      <span class="vlabel">RUNWAY WALK</span>
+    </div>
+    <div class="ph ph-video relative" style="aspect-ratio:16/9" data-label="">
+      <div class="play-btn">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="#14100C"><path d="M8 5.14v14l11-7z"/></svg>
+      </div>
+      <span class="vlabel" data-fr="PRÉSENTATION" data-en="INTRODUCTION">PRÉSENTATION</span>
+    </div>
+  </div>
+  <p class="mt-4 text-[12px] text-inkdim/70">Remplacer les placeholders par : <code class="text-inkdim">&lt;video controls src="videos/walk.mp4"&gt;</code> ou un <code class="text-inkdim">&lt;iframe&gt;</code> YouTube/Vimeo.</p>
+</section>
+
+<!-- ============================================================ -->
+<!-- LIGHTBOX -->
+<div id="lightbox" class="fixed inset-0 z-[60] hidden items-center justify-center p-6 lg:p-10 bg-bg/95 backdrop-blur-sm" role="dialog" aria-modal="true">
+  <button id="lbClose" class="absolute top-5 right-5 w-10 h-10 grid place-items-center rounded-full border border-hair text-ink hover:text-gold hover:border-gold/40 transition-colors" aria-label="Fermer">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 6l12 12M18 6L6 18"/></svg>
+  </button>
+  <div class="w-full max-w-[560px]">
+    <div id="lbMedia" class="ph w-full" style="aspect-ratio:4/5" data-label="LIGHTBOX"></div>
+    <p id="lbCaption" class="mt-4 text-center text-[11px] tracking-[.14em] text-inkdim"></p>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- CONTACT -->
+<section id="contact" class="bg-bgalt border-t border-hair">
+  <div class="max-w-6xl mx-auto px-5 lg:px-8 py-10 lg:py-14">
+    <div class="grid lg:grid-cols-[1fr_440px] gap-10 lg:gap-16">
+      <!-- Left -->
+      <div>
+        <p class="text-[11px] tracking-[.18em] text-gold mb-2">BOOKING</p>
+        <h2 class="font-display text-[26px] lg:text-[40px] font-light leading-none tracking-tight" data-fr="Contactez le management" data-en="Contact management">Contactez le management</h2>
+        <p class="mt-4 text-[13px] leading-relaxed text-inkdim max-w-lg" data-fr="Doudou est représenté par son manager pour toute demande de booking, casting ou collaboration — agences, marques, photographes." data-en="Doudou is represented by his manager for all booking, casting and collaboration requests — agencies, brands, photographers.">Doudou est représenté par son manager pour toute demande de booking, casting ou collaboration — agences, marques, photographes.</p>
+
+        <div class="mt-8 space-y-3 text-[13px]">
+          <!-- EDIT: Manager — remplacer le nom -->
+          <p><span class="text-inkdim">Manager</span> — <span class="text-ink">[Nom du manager]</span></p>
+          <!-- EDIT: Email — remplacer booking@example.com -->
+          <p><span class="text-inkdim">Email</span> — <a href="mailto:booking@example.com" class="text-gold hover:text-ink underline underline-offset-4 decoration-gold/40">booking@example.com</a></p>
+          <p><span class="text-inkdim">Tél.</span> — <a href="tel:+22300000000" class="text-ink hover:text-gold">+223 00 00 00 00</a></p>
+        </div>
+
+        <div class="mt-6 flex flex-wrap gap-3">
+          <a href="https://wa.me/22300000000?text=Bonjour%20—%20demande%20de%20booking%20pour%20Doudou%20Diakite" target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-gold text-bg text-[11px] tracking-[.14em] font-semibold px-5 py-3 rounded-full hover:bg-ink hover:text-bg transition-colors">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M19.05 4.91A9.82 9.82 0 0 0 12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.26-1.38a9.78 9.78 0 0 0 4.78 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.91-7.02zm-7.01 15.24h-.01a8.16 8.16 0 0 1-4.16-1.14l-.3-.18-3.12.82.83-3.04-.2-.31a8.26 8.26 0 0 1-1.27-4.39c0-4.55 3.71-8.26 8.27-8.26 2.21 0 4.29.86 5.85 2.43a8.22 8.22 0 0 1 2.42 5.84c0 4.56-3.71 8.27-8.27 8.27zm6.74-6.19c-.37-.19-2.19-1.08-2.53-1.21-.34-.12-.59-.18-.84.18-.25.37-.96 1.21-1.18 1.45-.22.25-.44.28-.81.09-.37-.19-1.57-.58-2.99-1.84-1.11-.99-1.86-2.21-2.08-2.58-.22-.37-.02-.57.17-.76.17-.17.37-.44.56-.66.19-.22.25-.37.37-.62.12-.25.06-.46-.03-.64-.09-.19-.84-2.02-1.15-2.77-.3-.72-.61-.62-.84-.63l-.72-.01c-.25 0-.64.09-.98.46-.34.37-1.28 1.25-1.28 3.05s1.31 3.54 1.49 3.78c.19.25 2.58 3.94 6.24 5.52.87.38 1.55.6 2.08.77.87.28 1.67.24 2.3.15.7-.1 2.19-.89 2.5-1.76.31-.86.31-1.6.22-1.76-.09-.15-.34-.25-.71-.44z"/></svg>
+            WHATSAPP
+          </a>
+          <a href="mailto:booking@example.com" class="inline-flex items-center gap-2 border border-gold text-gold text-[11px] tracking-[.14em] font-semibold px-5 py-3 rounded-full hover:bg-gold hover:text-bg transition-colors">EMAIL</a>
+        </div>
+      </div>
+
+      <!-- Form -->
+      <form id="contactForm" class="space-y-5">
+        <div>
+          <label class="block text-[11px] tracking-[.14em] text-inkdim mb-1.5">NOM / AGENCE</label>
+          <input type="text" name="name" required placeholder="Votre nom" class="w-full text-[14px]"/>
+        </div>
+        <div>
+          <label class="block text-[11px] tracking-[.14em] text-inkdim mb-1.5">EMAIL</label>
+          <input type="email" name="email" required placeholder="votre@email.com" class="w-full text-[14px]"/>
+        </div>
+        <div>
+          <label class="block text-[11px] tracking-[.14em] text-inkdim mb-1.5">MESSAGE</label>
+          <textarea name="message" rows="4" required placeholder="Votre demande..." class="w-full text-[14px] resize-none"></textarea>
+        </div>
+        <button type="submit" class="w-full bg-ink text-bg font-semibold tracking-[.14em] text-[12px] py-3.5 rounded-full hover:bg-gold transition-colors" data-fr="ENVOYER" data-en="SEND">ENVOYER</button>
+        <p id="formNote" class="hidden text-[12px] text-gold text-center"></p>
+      </form>
+    </div>
+
+    <!-- Footer low -->
+    <div class="mt-12 pt-8 border-t border-hair flex flex-col sm:flex-row items-center justify-between gap-3 text-[11px] tracking-wide">
+      <p class="text-inkdim">© <span id="year"></span> Doudou Diakite — <span data-fr="Tous droits réservés" data-en="All rights reserved">Tous droits réservés</span></p>
+      <div class="flex items-center gap-4 text-inkdim">
+        <!-- EDIT: Réseaux — remplacer les URLs -->
+        <a href="https://instagram.com/flash_net223" target="_blank" rel="noopener" class="hover:text-gold">Instagram</a>
+        <span class="opacity-30">·</span>
+        <a href="https://tiktok.com/@flash_net223" target="_blank" rel="noopener" class="hover:text-gold">TikTok</a>
+        <span class="opacity-30">·</span>
+        <span class="text-inkdim/60">VISIO IA</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+// Year
+document.getElementById('year').textContent = new Date().getFullYear();
+
+// Langue
+let lang = localStorage.getItem('lang') || 'fr';
+function applyLang(l){
+  lang = l;
+  localStorage.setItem('lang', l);
+  document.documentElement.lang = l;
+  document.querySelectorAll('[data-fr]').forEach(el=>{
+    const v = el.getAttribute('data-'+l);
+    if(v!==null) el.textContent = v;
+  });
+  // placeholders
+  document.querySelectorAll('[data-fr-ph]').forEach(el=>{
+    const v = el.getAttribute('data-'+l+'-ph');
+    if(v) el.placeholder = v;
+  });
+  // buttons
+  const frOn = l==='fr';
+  [['btnFR','btnEN'],['btnFRm','btnENm']].forEach(([a,b])=>{
+    const ea=document.getElementById(a), eb=document.getElementById(b);
+    if(!ea||!eb) return;
+    ea.className = frOn ? 'px-3 py-1 rounded-full text-[11px] tracking-widest bg-gold text-bg font-semibold' : 'px-3 py-1 rounded-full text-[11px] tracking-widest text-inkdim hover:text-ink';
+    eb.className = !frOn ? 'px-3 py-1 rounded-full text-[11px] tracking-widest bg-gold text-bg font-semibold' : 'px-3 py-1 rounded-full text-[11px] tracking-widest text-inkdim hover:text-ink';
+    // mobile variant
+    if(a==='btnFRm'){
+      ea.className = frOn ? 'flex-1 py-2 rounded-full text-[11px] tracking-widest bg-gold text-bg font-semibold' : 'flex-1 py-2 rounded-full text-[11px] tracking-widest border border-hair text-inkdim';
+      eb.className = !frOn ? 'flex-1 py-2 rounded-full text-[11px] tracking-widest bg-gold text-bg font-semibold' : 'flex-1 py-2 rounded-full text-[11px] tracking-widest border border-hair text-inkdim';
+    }
+  });
+}
+document.getElementById('btnFR').addEventListener('click',()=>applyLang('fr'));
+document.getElementById('btnEN').addEventListener('click',()=>applyLang('en'));
+document.getElementById('btnFRm').addEventListener('click',()=>applyLang('fr'));
+document.getElementById('btnENm').addEventListener('click',()=>applyLang('en'));
+applyLang(lang);
+
+// Burger
+const burger=document.getElementById('burger');
+const mm=document.getElementById('mobileMenu');
+burger.addEventListener('click',()=>mm.classList.toggle('open'));
+mm.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>mm.classList.remove('open')));
+
+// Filtres
+const filterBtns=document.querySelectorAll('.filter-btn');
+const items=document.querySelectorAll('.gallery-item');
+filterBtns.forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    filterBtns.forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    const f=btn.dataset.filter;
+    items.forEach(it=>{
+      it.style.display = (f==='all' || it.dataset.cat===f) ? '' : 'none';
+    });
+  });
+});
+
+// Lightbox
+const lb=document.getElementById('lightbox');
+const lbMedia=document.getElementById('lbMedia');
+const lbCaption=document.getElementById('lbCaption');
+const lbClose=document.getElementById('lbClose');
+function openLB(caption, label){
+  lbMedia.setAttribute('data-label', label || caption);
+  lbCaption.textContent = caption || '';
+  lb.classList.remove('hidden');
+  lb.classList.add('flex');
+  document.body.style.overflow='hidden';
+  lbClose.focus();
+}
+function closeLB(){
+  lb.classList.add('hidden');
+  lb.classList.remove('flex');
+  document.body.style.overflow='';
+}
+document.querySelectorAll('.gallery-item').forEach(el=>{
+  el.addEventListener('click',()=>{
+    openLB(el.dataset.caption, el.querySelector('.ph')?.getAttribute('data-label')||el.dataset.caption);
+  });
+});
+lbClose.addEventListener('click', closeLB);
+lb.addEventListener('click', e=>{ if(e.target===lb) closeLB(); });
+document.addEventListener('keydown', e=>{ if(e.key==='Escape' && !lb.classList.contains('hidden')) closeLB(); });
+
+// Form -> mailto
+const form=document.getElementById('contactForm');
+const note=document.getElementById('formNote');
+form.addEventListener('submit', e=>{
+  e.preventDefault();
+  const fd=new FormData(form);
+  const name=fd.get('name'), email=fd.get('email'), message=fd.get('message');
+  const subject=encodeURIComponent(`[Portfolio] Demande de booking — ${name}`);
+  const body=encodeURIComponent(`Nom / Agence: ${name}\nEmail: ${email}\n\nMessage:\n${message}`);
+  // EDIT: Email manager — même adresse que dans le href mailto
+  window.location.href=`mailto:booking@example.com?subject=${subject}&body=${body}`;
+  note.textContent = lang==='fr' ? 'Merci — le message a été préparé, votre client email va s\'ouvrir.' : 'Thanks — your email client will open with the message ready.';
+  note.classList.remove('hidden');
+  setTimeout(()=>note.classList.add('hidden'), 6000);
+});
+</script>
+</body>
+</html>

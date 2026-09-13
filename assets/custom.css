@@ -1,0 +1,150 @@
+/* ============ Custom CSS (identité premium) ============ */
+
+/* Couleurs premium - Noir profond et or élégant */
+:root {
+  --bg: #0A0908;
+  --bgalt: #14110D;
+  --bgcard: #1A1611;
+  --ink: #F5EFE0;
+  --inkdim: #A89F8E;
+  --inkfaint: #6B6353;
+  --gold: #C6A15B;
+  --golddim: #8B6F47;
+  --hair: rgba(245,239,224,0.10);
+  --hair2: rgba(245,239,224,0.06);
+}
+
+/* Animations discrètes */
+@keyframes pulseRing {
+  0% { transform: scale(1); opacity: 0.8; }
+  100% { transform: scale(1.4); opacity: 0; }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.rise { animation: fadeInUp 0.6s ease-out forwards; }
+.rise-1 { animation-delay: 0.05s; }
+.rise-2 { animation-delay: 0.22s; }
+.rise-3 { animation-delay: 0.38s; }
+
+/* Focus visible premium */
+.focus-visible:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
+}
+
+/* Skip link */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--bg);
+  padding: 8px 16px;
+  color: var(--gold);
+  font-size: 12px;
+  text-transform: uppercase;
+  z-index: 100;
+  transition: top 0.3s ease;
+}
+.skip-link:focus { top: 0; }
+
+/* Ruler (règle verticale) */
+.ruler {
+  position: relative;
+  width: 2px;
+  height: 100%;
+  background: var(--hair);
+}
+.ruler::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 50%;
+  margin-left: -4px;
+  width: 8px; height: 8px;
+  background: var(--gold);
+  border-radius: 50%;
+  top: 10%;
+}
+
+/* Placeholder styling */
+.ph {
+  background: var(--bgcard);
+  border-radius: 8px;
+}
+.ph::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+}
+.ph::after {
+  content: attr(data-label);
+  position: relative;
+  color: var(--inkdim);
+  font-size: 11px;
+  text-transform: uppercase;
+}
+
+/* Video play button */
+.play-btn {
+  width: 48px; height: 48px;
+  border: 2px solid var(--gold);
+  border-radius: 50%;
+  background: transparent;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+.play-btn:hover { transform: scale(1.1); }
+
+/* Impression */
+@media print {
+  .no-print { display: none; }
+  @page { size: A4; margin: 2cm; }
+  .comp-card { page-break-inside: avoid; }
+  .footer { display: none; }
+}
+
+
+/* Header fixe : transition fluide auto-hide */
+#header {
+  transition: transform 0.35s ease, background 0.3s ease, border-color 0.3s ease !important;
+  background: rgba(10,9,8,0.5) !important;
+  backdrop-filter: blur(12px) !important;
+}
+/* ============ Menu mobile & navigation ============ */
+
+/* Masquer le menu mobile par défaut (toggle JS) */
+#mobileMenu {
+  display: none;
+}
+#mobileMenu.open {
+  display: block;
+}
+
+/* Dégradé/nav active */
+.nav-link.active {
+  color: var(--gold);
+}
+.nav-link.active::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 1px;
+  background: var(--gold);
+  margin-top: 2px;
+}
+
+/* Compensation header fixed pour ancres */
+html {
+  scroll-padding-top: 72px;
+  scroll-behavior: smooth;
+}
+
+/* Header : léger fondu au scroll (déjà géré en JS, mais on assure) */
+#header.scrolled {
+  background: rgba(10, 9, 8, 0.85);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(245,239,224,0.08);
+}
