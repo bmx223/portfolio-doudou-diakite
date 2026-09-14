@@ -550,9 +550,8 @@
     burger.setAttribute('aria-expanded', isOpen);
     mm.hidden = !isOpen;
     mm.setAttribute('aria-hidden', String(!isOpen));
-    burgerIcon.innerHTML = isOpen
-      ? '<path d="M6 6l12 12M18 6L6 18"/>'
-      : '<path d="M4 7h16M4 12h16M4 17h16"/>';
+    const togglePath = burgerIcon.querySelector('path');
+    if (togglePath) togglePath.setAttribute('d', isOpen ? 'M6 6l12 12M18 6L6 18' : 'M4 7h16M4 12h16M4 17h16');
   });
   // Fermer le mobile menu avec Escape (accessibilité)
   document.addEventListener("keydown", e => {
@@ -561,7 +560,8 @@
       mm.hidden = true;
       mm.setAttribute("aria-hidden", "true");
       burger.setAttribute("aria-expanded", "false");
-      burgerIcon.innerHTML = "<path d=\"M4 7h16M4 12h16M4 17h16"/>";
+      const escPath = burgerIcon.querySelector('path');
+      if (escPath) escPath.setAttribute('d', 'M4 7h16M4 12h16M4 17h16');
     }
   });
 
@@ -570,7 +570,8 @@
     mm.hidden = true;
     mm.setAttribute('aria-hidden', 'true');
     burger.setAttribute('aria-expanded', 'false');
-    burgerIcon.innerHTML = '<path d="M4 7h16M4 12h16M4 17h16"/>';
+    const navPath = burgerIcon.querySelector('path');
+    if (navPath) navPath.setAttribute('d', 'M4 7h16M4 12h16M4 17h16');
   }));
 
   // ---- Scroll progress bar ----
