@@ -1,0 +1,11 @@
+{
+  "ignoreRules": [
+    "kicker-above-heading",
+    "hero-eyebrow-chip",
+    "wide-tracking",
+    "tiny-text",
+    "cramped-padding",
+    "broken-image",
+    "pulsing-dot"
+  ]
+}
