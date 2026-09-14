@@ -211,9 +211,9 @@
       </div>
 
       <div class="reveal reveal-delay-3 mt-8">
-        <button onclick="window.print()" class="inline-flex items-center gap-2 border border-gold text-gold text-[12px] tracking-[.14em] font-semibold px-5 py-3 rounded-full hover:bg-gold hover:text-bg transition-colors" data-fr="TÉLÉCHARGER COMP CARD" data-en="DOWNLOAD COMP CARD">
+        <button type="button" onclick="window.print()" class="inline-flex items-center gap-2 border border-gold text-gold text-[12px] tracking-[.14em] font-semibold px-5 py-3 rounded-full hover:bg-gold hover:text-bg transition-colors" data-fr="IMPRIMER LA COMP CARD" data-en="PRINT COMP CARD">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3v12M5 12l7 7 7-7M5 21h14"/></svg>
-          TÉLÉCHARGER COMP CARD
+          IMPRIMER LA COMP CARD
         </button>
       </div>
     </div>
@@ -257,40 +257,40 @@
       </div>
 
       <div id="gallery" class="grid grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-5">
-        <!-- REMPLACER chaque .ph par <img src="images/look-01.jpg" ...> -->
-        <div class="gallery-item" data-cat="athletic" data-caption="Athletic / Mouvement — 01" data-img="images/look-01.jpg">
+        <!-- Ajouter data-img seulement lorsqu'une image existe : les placeholders ne doivent pas ouvrir une lightbox vide. -->
+        <div class="gallery-item" data-cat="athletic" data-caption="Athletic / Mouvement — 01">
           <div class="ph" style="aspect-ratio:4/5" data-label="ATHLETIC — 01" <!-- impeccable-disable cramped-padding -->></div>
           <div class="gallery-overlay"><span class="gallery-caption">Athletic — 01</span></div>
         </div>
-        <div class="gallery-item" data-cat="streetwear" data-caption="Streetwear — 01" data-img="images/look-02.jpg">
+        <div class="gallery-item" data-cat="streetwear" data-caption="Streetwear — 01">
           <div class="ph" style="aspect-ratio:4/5" data-label="STREETWEAR — 01" <!-- impeccable-disable cramped-padding -->></div>
           <div class="gallery-overlay"><span class="gallery-caption">Streetwear — 01</span></div>
         </div>
-        <div class="gallery-item" data-cat="couture" data-caption="Haute Couture — 01" data-img="images/look-03.jpg">
+        <div class="gallery-item" data-cat="couture" data-caption="Haute Couture — 01">
           <div class="ph" style="aspect-ratio:4/5" data-label="COUTURE — 01"></div>
           <div class="gallery-overlay"><span class="gallery-caption">Couture — 01</span></div>
         </div>
-        <div class="gallery-item" data-cat="athletic" data-caption="Athletic / Mouvement — 02" data-img="images/look-04.jpg">
+        <div class="gallery-item" data-cat="athletic" data-caption="Athletic / Mouvement — 02">
           <div class="ph" style="aspect-ratio:4/5" data-label="ATHLETIC — 02"></div>
           <div class="gallery-overlay"><span class="gallery-caption">Athletic — 02</span></div>
         </div>
-        <div class="gallery-item" data-cat="streetwear" data-caption="Streetwear — 02" data-img="images/look-05.jpg">
+        <div class="gallery-item" data-cat="streetwear" data-caption="Streetwear — 02">
           <div class="ph" style="aspect-ratio:4/5" data-label="STREETWEAR — 02"></div>
           <div class="gallery-overlay"><span class="gallery-caption">Streetwear — 02</span></div>
         </div>
-        <div class="gallery-item" data-cat="couture" data-caption="Haute Couture — 02" data-img="images/look-06.jpg">
+        <div class="gallery-item" data-cat="couture" data-caption="Haute Couture — 02">
           <div class="ph" style="aspect-ratio:4/5" data-label="COUTURE — 02"></div>
           <div class="gallery-overlay"><span class="gallery-caption">Couture — 02</span></div>
         </div>
-        <div class="gallery-item" data-cat="athletic" data-caption="Athletic / Mouvement — 03" data-img="images/look-07.jpg">
+        <div class="gallery-item" data-cat="athletic" data-caption="Athletic / Mouvement — 03">
           <div class="ph" style="aspect-ratio:4/5" data-label="ATHLETIC — 03"></div>
           <div class="gallery-overlay"><span class="gallery-caption">Athletic — 03</span></div>
         </div>
-        <div class="gallery-item" data-cat="streetwear" data-caption="Streetwear — 03" data-img="images/look-08.jpg">
+        <div class="gallery-item" data-cat="streetwear" data-caption="Streetwear — 03">
           <div class="ph" style="aspect-ratio:4/5" data-label="STREETWEAR — 03"></div>
           <div class="gallery-overlay"><span class="gallery-caption">Streetwear — 03</span></div>
         </div>
-        <div class="gallery-item" data-cat="couture" data-caption="Haute Couture — 03" data-img="images/look-09.jpg">
+        <div class="gallery-item" data-cat="couture" data-caption="Haute Couture — 03">
           <div class="ph" style="aspect-ratio:4/5" data-label="COUTURE — 03"></div>
           <div class="gallery-overlay"><span class="gallery-caption">Couture — 03</span></div>
         </div>
@@ -698,6 +698,7 @@
 
   galleryItems.forEach((el, i) => {
     el.addEventListener('click', () => {
+      if (!el.dataset.img) return;
       updateVisibleItems();
       const visibleIndex = visibleItems.indexOf(el);
       openLB(visibleIndex >= 0 ? visibleIndex : 0);
@@ -761,3 +762,4 @@
 
 </body>
 </html>
+
